@@ -22,6 +22,8 @@ def commandgrab(f):
             commands.append(c)
     return commands
 
+#all references to boats are bc i imagined the cargo stacks
+#were on shipping container ships. i regret nothing.
 def boattracker(h):
     boats = [[] for x in range(h.index("\n")) if x % 4 == 0]
     for line in h.splitlines():
