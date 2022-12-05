@@ -41,8 +41,7 @@ def movers(boat, mov):
     for move in mov:
         i = 0
         while i < move[0]:
-            x = boat[move[1]-1].pop(0)
-            boat[move[2]-1].insert(i, x)
+            boat[move[2]-1].insert(i, boat[move[1]-1].pop(0))
             i += 1          
 
 data = open("input.txt")
