@@ -23,10 +23,8 @@ for iy, row in enumerate(forest):
                      np.flip(np.transpose(forest)[ix][:iy]), np.transpose(forest)[ix][iy+1:]]
             viewscore = [0, 0, 0, 0]
             for i, group in enumerate(edges):
-                if len(group) == 0:
-                    group= [-1]
                 for z, coord in enumerate(group):
-                    if coord > -1 and coord < cell:
+                    if coord < cell:
                         viewscore[i] = z + 1
                     elif coord >= cell:
                         viewscore[i] = z + 1
