@@ -27,37 +27,16 @@ for tayne in sequence:
 
 lines= ["", "", "", "", "", ""]
 
-for i in range(240):
-    if i < 40:
-        if i in range(clock[i] - 1, clock[i] + 2):
-            lines[0] += "#"
+linecounts = [[i for i in range(0, 40)], [i for i in range(40, 80)], 
+              [i for i in range(80, 120)], [i for i in range(120, 160)], 
+              [i for i in range(160, 200)], [i for i in range(200, 240)]]
+
+for index, count in enumerate(linecounts):
+    for i in count:
+        if i - min(count) in range(clock[i] - 1, clock[i] + 2):
+            lines[index] += "#"
         else:
-            lines[0] += "."
-    elif i < 80:
-        if i - 40 in range(clock[i] - 1, clock[i] + 2):
-            lines[1] += "#"
-        else:
-            lines[1] += "."
-    elif i < 120:
-        if i - 80 in range(clock[i] - 1, clock[i] + 2):
-            lines[2] += "#"
-        else:
-            lines[2] += "."
-    elif i < 160:
-        if i - 120 in range(clock[i] - 1, clock[i] + 2):
-            lines[3] += "#"
-        else:
-            lines[3] += "."
-    elif i < 200:
-        if i - 160 in range(clock[i] - 1, clock[i] + 2):
-            lines[4] += "#"
-        else:
-            lines[4] += "."
-    else:
-        if i - 200 in range(clock[i] - 1, clock[i] + 2):
-            lines[5] += "#"
-        else:
-            lines[5] += "."
-            
+            lines[index] += "."
+
 for line in lines:
     print(line)
