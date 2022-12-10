@@ -14,12 +14,11 @@ index = 0
 
 for tayne in sequence:
     if tayne[0] == "a":
-        val = int(tayne[tayne.index(" "):])
         clock[index] = x
         index += 1
         clock[index] = x
         index += 1
-        x += val
+        x += int(tayne[tayne.index(" "):])
         clock[index] = x
     else:
         clock[index] = x
